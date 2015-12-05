@@ -85,7 +85,7 @@ do_compile() {
   CFLAGS="-fPIC $CFLAGS " ; export CFLAGS
   
   autotools_do_configure
-  oe_runmake  CFLAGS="$CFLAGS -lfl -lcrypt"
+  oe_runmake  CFLAGS="$CFLAGS -lcrypt"
   
   
   
