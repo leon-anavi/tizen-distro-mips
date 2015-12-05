@@ -26,6 +26,7 @@ SRC_URI = "git://review.tizen.org/platform/upstream/systemd;protocol=git;tag=1c6
            file://00-create-volatile.conf \
            file://init \
            file://run-ptest \
+           file://missing-mips.patch \
            "
 
 S = "${WORKDIR}/git"

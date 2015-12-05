@@ -1,0 +1,42 @@
+diff --git a/src/shared/missing.h b/src/shared/missing.h
+index 3ff1a21..9008078 100644
+--- a/src/shared/missing.h
++++ b/src/shared/missing.h
+@@ -145,28 +145,15 @@ static inline int pivot_root(const char *new_root, const char *put_old) {
+ #    define __NR_memfd_create 385
+ #  endif
+ #elif defined _MIPS_SIM
+-#  if _MIPS_SIM == _MIPS_SIM_ABI32
+-#    ifndef __NR_fanotify_init
+-#      define __NR_fanotify_init 4336
+-#    endif
+-#    ifndef __NR_fanotify_mark
+-#      define __NR_fanotify_mark 4337
+-#    endif
+-#  elif _MIPS_SIM == _MIPS_SIM_NABI32
+-#    ifndef __NR_fanotify_init
+-#      define __NR_fanotify_init 6300
+-#    endif
+-#    ifndef __NR_fanotify_mark
+-#      define __NR_fanotify_mark 6301
+-#    endif
+-#  elif _MIPS_SIM == _MIPS_SIM_ABI64
+-#    ifndef __NR_fanotify_init
+-#      define __NR_fanotify_init 5295
+-#    endif
+-#    ifndef __NR_fanotify_mark
+-#      define __NR_fanotify_mark 5296
+-#    endif
+-#  endif
++# if _MIPS_SIM == _MIPS_SIM_ABI32
++# define __NR_memfd_create 4354
++# endif
++# if _MIPS_SIM == _MIPS_SIM_NABI32
++# define __NR_memfd_create 6318
++# endif
++# if _MIPS_SIM == _MIPS_SIM_ABI64
++# define __NR_memfd_create 5314
++# endif
+ #else
+ #  ifndef __NR_fanotify_init
+ #    define __NR_fanotify_init 338
